@@ -1,0 +1,24 @@
+﻿<Controls:MetroWindow x:Class="Dewcon.MainWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      GlowBrush="{DynamicResource AccentColorBrush}"
+                      mc:Ignorable="d"
+                      Title="Dewcon" Height="500" Width="700">
+  <Grid>
+    <RichTextBox x:Name="DebugLog" VerticalScrollBarVisibility="Auto" IsReadOnly="True" VerticalAlignment="Bottom"
+                 BorderThickness="0" Margin="10,0,10,50" Height="auto" FontFamily="Consolas">
+      <RichTextBox.Resources>
+        <Style TargetType="{x:Type Paragraph}">
+          <Setter Property="Margin" Value="0" />
+        </Style>
+      </RichTextBox.Resources>
+      <FlowDocument />
+    </RichTextBox>
+
+    <TextBox x:Name="UserBox" Foreground="{DynamicResource AccentColorBrush}" PreviewKeyDown="UserBox_KeyDown" MaxHeight="25"
+             Height="25" VerticalAlignment="Bottom" Margin="10,0,10,10" FontFamily="Consolas" BorderBrush="#FF969696" />
+  </Grid>
+</Controls:MetroWindow>
