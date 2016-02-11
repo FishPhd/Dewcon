@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Net.Sockets;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -53,20 +51,16 @@ namespace Dewcon
       {
         if (_tempCount < Entrycollectionsize && UserBox.Text != string.Empty && _tempVars[_tempCount] != string.Empty)
         {
-          //_tempVars[_tempCount] = UserBox.Text;
-          Console.WriteLine(_tempVars[_tempCount] + @" " + _tempCount);
+          //Console.WriteLine(_tempVars[_tempCount] + @" " + _tempCount);
           while (_tempVars[_tempCount] != null)
-          {
             _tempCount++;
-            Console.WriteLine(_tempCount);
-          }
             
           _tempVars[_tempCount] = UserBox.Text;
           _tempCount++;
-          //Console.WriteLine(tempCount);
         }
 
         AppendDebugLine(Environment.NewLine + UserBox.Text, Color.FromRgb(51, 153, 255));
+
         if (!UserBox.Text.Contains("start"))
           AppendDebugLine(Rcon.DewCmd(UserBox.Text), Color.FromRgb(150, 150, 150));
 
